@@ -45,6 +45,20 @@
 
 		}
 
+		function test_makeTitleCase_firstWords()
+		{
+				//Arrange
+				$test_TitleCaseGenerator = new TitleCaseGenerator;
+				$input = "the car went to the beach";
+
+				//Act
+				$result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+				//Assert
+				$this->assertEquals("The Car Went to the Beach", $result);
+
+		}
+
 	}
 
 ?>
