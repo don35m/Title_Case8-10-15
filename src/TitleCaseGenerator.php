@@ -3,8 +3,8 @@
     {
         function makeTitleCase($input_title)
         {
-
-            $input_array_of_words = explode(" ", $input_title);
+            $lower_case_string = strtolower($input_title);
+            $input_array_of_words = explode(" ", $lower_case_string);
             $output_titlecased = array();
             foreach ($input_array_of_words as $word) {
 
