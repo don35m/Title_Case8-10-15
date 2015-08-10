@@ -73,6 +73,21 @@
 
 	    }
 
+			function test_makeTitleCase_uniqueName()
+			{
+					//Arrange
+					$test_TitleCaseGenerator = new TitleCaseGenerator;
+					$input = "the car went to o'malley's";
+
+					//Act
+					$result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+					//Assert
+					$this->assertEquals("The Car Went to O'Malley's", $result);
+
+			}
+
+
 	}
 
 ?>

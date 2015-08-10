@@ -8,17 +8,32 @@
             $output_titlecased = array();
             foreach ($input_array_of_words as $word) {
 
+
+
+
                 if( strcmp($word, 'and') && strcmp($word, 'from')
                     && strcmp($word, 'or') && strcmp($word, 'but')
                     && strcmp($word, 'to') && strcmp($word, 'the') ) {
-                    array_push($output_titlecased, ucfirst($word));
+                    $ucword = ucfirst($word);
+
+                    if ( !strcmp($ucword[1],'\'') ) {
+                        $res = $ucword[2];
+                        $ucword[2] = strtoupper($res);
+                        // echo "word-char2 is:" . $word[2] . "word is:" . $word;
+                    }
+
+                    array_push($output_titlecased, $ucword);
+                    // echo "word has been upper cased and pushed into the array" . $ucword;
                 } else {
                     array_push($output_titlecased, $word);
                 }
 
+
             }
 
-            $output_titlecased[0] = ucfirst($input_array_of_words[0]);
+            $var = ucfirst($input_array_of_words[0]);
+            $output_titlecased[0] = $var;
+            // echo "Output is:" . $output_titlecased[0];
 
             return implode(" ", $output_titlecased);
 
